@@ -102,12 +102,23 @@ const calculateTotal = () => {
     return total;
   };
     
+
     
 
 // Exercise 4
-const applyPromotionsCart = () =>  {
+const applyPromotionsCart = () =>  
     // Apply promotions to each item in the array "cart"
-}
+
+    {
+        cart.forEach(product => {
+          if (product.offer && product.quantity >= product.offer.number) {
+            const subtotal = product.price * product.quantity;
+            const discount = product.offer.percent;
+            const discountedTotal = subtotal - (subtotal * discount / 100);
+            product.subtotalWithDiscount = discountedTotal;
+          }
+        });
+      };
 
 
 
