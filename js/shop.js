@@ -94,6 +94,13 @@ const cleanCart = () =>  {
     
 // Exercise 3
 
+const calculateTotal = () => {
+    let total = 0;
+    cart.forEach(element => {
+      total += element.quantity * element.price;
+    });
+    return total;
+  };
     
     
 
