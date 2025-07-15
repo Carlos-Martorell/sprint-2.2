@@ -72,28 +72,35 @@ const products = [
 // Improved version of cartList. Cart is an array of products (objects), but each one has a quantity field to define its quantity, so these products are not repeated.
 const cart = [];
 
-const total = 0;
 
-// Exercise 1
 const buy = (id) => {
-    // 1. Loop for to the array products to get the item to add to cart
-    // 2. Add found product to the cart array
-}
+
+        const productToAdd = products.find( product => product.id === id );
+        const existingProduct = cart.find(product => product.id === id);
+
+        if (!existingProduct) {
+            const productWithQuantity = { ...productToAdd, quantity: 1 };
+            cart.push(productWithQuantity);
+        } else {
+            existingProduct.quantity += 1;
+        }
+    }
 
 // Exercise 2
-const cleanCart = () =>  {
 
-}
-
+    
 // Exercise 3
-const calculateTotal = () =>  {
-    // Calculate total price of the cart using the "cartList" array
-}
+
+    
+    
 
 // Exercise 4
 const applyPromotionsCart = () =>  {
     // Apply promotions to each item in the array "cart"
 }
+
+
+
 
 // Exercise 5
 const printCart = () => {
