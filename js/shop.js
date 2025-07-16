@@ -86,6 +86,13 @@ const buy = (id) => {
         }
     }
 
+    buy(1);
+    buy(2);
+    buy(3);
+    buy(1);
+    buy(4);
+
+
 // Exercise 2
 
 const cleanCart = () =>  {
@@ -93,6 +100,8 @@ const cleanCart = () =>  {
     }
     
 // Exercise 3
+
+
 
 const calculateTotal = () => {
     let total = 0;
@@ -102,9 +111,12 @@ const calculateTotal = () => {
     return total;
   };
     
-
+  //product.subtotalWithDiscount || product.price * product.quantity
     
 
+console.log(calculateTotal()); // This will log the total price of the cart without any discounts applied
+console.log(cart); // This will log the cart array with products and their quantities
+console.log(cart[0].subtotalWithDiscount); // This will log the subtotal with discount for the first product, if applicable
 // Exercise 4
 const applyPromotionsCart = () =>  
     // Apply promotions to each item in the array "cart"
@@ -124,9 +136,74 @@ const applyPromotionsCart = () =>
 
 
 // Exercise 5
-const printCart = () => {
+//const printCart = () => {
     // Fill the shopping cart modal manipulating the shopping cart dom
+
+    //const cartContainer = document.getElementById("cart_list");
+    //cartContainer.innerHTML = ""; 
+
+    /*cartContainer.innerHTML = cart.map(product => {
+        const subtotal = product.quantity * product.price;
+        const subtotalWithDiscount = product.subtotalWithDiscount || subtotal;
+        return `
+            <tr>
+                <th scope="row">${product.name}</th>
+                <td>$${product.price.toFixed(2)}</td>
+                <td>${product.quantity}</td>
+                <td>$${subtotalWithDiscount.toFixed(2)}</td>
+                <td><button class="btn btn-danger" onclick="removeFromCart(${product.id})">Remove</button></td>
+            </tr>`;
+    }).join("");*/
+/*---------
+// Versión limpia
+cartContainer.innerHTML = cart.map(product => `
+    <tr>
+      <td>${product.name}</td>
+      ...
+    </tr>
+  `).join("");
+  ----------*/
+  /*
+
+        const cartContainer = document.getElementById("cart_list"); 
+        cartContainer.innerHTML = ""; 
+        cart.forEach( product => { 
+
+        const finalPrice = product.subtotalWithDiscount || product.price * product.quantity
+        cartContainer.innerHTML += `
+            <tr>
+            <th scope="row">${product.name}</th>
+            <td>$${product.price}</td>
+            <td>${product.quantity}</td>
+            <td>$${finalPrice.toFixed(2)}</td>
+            <tr>
+            `; 
+    })
+ 
+}*/
+
+const printCart = () => {
+    const cartContainer = document.getElementById("cart_list"); 
+    cartContainer.innerHTML = ""; 
+    cartContainer.innerHTML = cart.map(product => {
+        const finalPrice = product.subtotalWithDiscount || product.price * product.quantity;
+        
+        return `
+        <tr>
+            <th scope="row">${product.name}</th>
+            <td>$${product.price}</td>
+            <td>${product.quantity}</td>
+            <td>$${finalPrice.toFixed(2)}</td>
+        </tr>`
+}).join("");
 }
+applyPromotionsCart();
+printCart();
+
+
+
+
+
 
 
 // ** Nivell II **
@@ -136,6 +213,4 @@ const removeFromCart = (id) => {
 
 }
 
-const open_modal = () =>  {
-    printCart();
-}
+const open_modal = () =>  printCart(); 
