@@ -2901,7 +2901,54 @@ textarea.form-control-lg {
 .input-group .form-select.is-valid:focus {
   z-index: 3;
 }
+/*-------------------------*/
+.card:hover {
+  background-color: #ffe6f0; /* rosáceo claro */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.card .card-body {
+  transition: color 0.3s ease;
+}
 
+.card:hover .card-body {
+  color: #5a2a45; /* un tono ciruela elegante */
+}
+
+.card:hover .card-img-top {
+  filter: hue-rotate(-30deg) saturate(1.5) brightness(0.95);
+  transition: filter 0.3s ease;
+}
+
+
+.cart-quantity-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* espacio entre botones y número */
+  white-space: nowrap;
+}
+
+
+.hero:hover h1,
+.hero:hover p {
+  transform: translateY(-3px);
+  opacity: 0.95;
+  transition: transform 0.6s ease, opacity 1s ease;
+}
+
+.hero:hover p {
+  text-shadow: 0 0 2px #ffb6c1; /* rosa suave que hace glow */
+}
+
+.hero, footer{
+  background: linear-gradient(135deg, #2a1f2d, #381e35);
+}
+
+.hero:hover {
+  background: linear-gradient(135deg, #402c47, #592a58);
+}
+/*-------------------------*/
 .invalid-feedback {
   display: none;
   width: 100%;
@@ -2990,6 +3037,8 @@ textarea.form-control-lg {
 .input-group .form-select.is-invalid:focus {
   z-index: 3;
 }
+
+
 
 .btn {
   display: inline-block;
@@ -11285,4 +11334,13 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+
+.hero {
+  background-color: #212529;
+  transition: background-color 0.3s ease;
+}
+
+.hero:hover {
+  background-color: #343a40; /* un gris más claro para resaltar */
 }

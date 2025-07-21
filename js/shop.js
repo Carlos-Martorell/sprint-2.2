@@ -91,9 +91,11 @@ const printCart = () => {
           <th scope="row">${product.name}</th>
           <td>$${product.price.toFixed(2)}</td>
           <td>
-            <button class="btn btn-sm btn-outline-dark" onclick="removeFromCart(${product.id})">−</button>
-            ${product.quantity}
-            <button class="btn btn-sm btn-outline-dark" onclick="increaseQuantity(${product.id})">+</button>
+            <div class="cart-quantity-controls">
+                <button class="btn btn-sm btn-outline-dark" onclick="removeFromCart(${product.id})">−</button>
+                <span>${product.quantity}</span>
+                <button class="btn btn-sm btn-outline-dark" onclick="increaseQuantity(${product.id})">+</button>
+            </div>
           </td>
           <td>$${finalPrice.toFixed(2)}</td>
         </tr>`;
