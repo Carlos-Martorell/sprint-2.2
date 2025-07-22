@@ -33,7 +33,7 @@ The project was developed from a starter code provided by IT Academy, and then e
 ## 🚀 Clone This Repository
 You can clone my updated version here:
 
-```bash  git clone https://github.com/Carlos-Martorell/sprint-2.2
+git clone https://github.com/Carlos-Martorell/sprint-2.2
 
 
 ## 🧑‍🎓 Notes

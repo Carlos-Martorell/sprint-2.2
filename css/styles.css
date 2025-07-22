@@ -2902,17 +2902,27 @@ textarea.form-control-lg {
   z-index: 3;
 }
 /*-------------------------*/
+
+
+
 .card:hover {
   background-color: #ffe6f0; /* rosáceo claro */
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
-.card .card-body {
-  transition: color 0.3s ease;
+.card-img-top {
+  max-height: 200px;
+  object-fit: contain;
+  width: 100%;
+  padding: 0.5rem;
 }
 
 .card:hover .card-body {
+  transition: color 0.3s ease;
+}
+
+.card:hover .card-body img{
   color: #5a2a45; /* un tono ciruela elegante */
 }
 
@@ -2948,6 +2958,81 @@ textarea.form-control-lg {
 .hero:hover {
   background: linear-gradient(135deg, #402c47, #592a58);
 }
+    
+
+
+
+
+
+.checkout-info {
+  
+  border-radius: 6px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+.checkout-info {
+  background-color: #2a1f2d; /* Dark plum */
+  border-left: 4px solid #ffe6f0;
+  color: #ffe6f0; /* Soft light text */
+}
+
+.checkout-info i {
+  font-size: 1.5rem;
+  color: #ffe6f0;
+}
+
+/* Contenedor general con fondo Hero */
+.info-section .info-box {
+  background: linear-gradient(135deg, #2a1f2d, #381e35);
+  transition: background 0.5s ease;
+  border-radius: 12px;
+}
+
+/* Hover general cambia el gradiente */
+.info-section .info-box:hover {
+  background: linear-gradient(135deg, #402c47, #592a58);
+}
+
+/* Elementos individuales */
+.info-item {
+  background-color: transparent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Elevación sutil al pasar sobre cada */
+.info-item:hover {
+  transform: translateY(-3px);
+}
+
+/* Iconos con color rosa suave */
+.info-item i {
+  font-size: 1.5rem;
+  color: #ffb6c1;
+}
+
+header {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 /*-------------------------*/
 .invalid-feedback {
   display: none;
