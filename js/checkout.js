@@ -69,34 +69,27 @@ const validateAddressOnBlur = () => {validateField(fAddress.value, fAddress, err
 
 const validate = (event) => {
 	event.preventDefault();
-
+	errorCount = 0
 
 	
 	validateField(fName.value, fName, errorName, value => !validateString(value) || validateRequiredField(value), error[1]);
 	validateField(fLastN.value, fLastN, errorLastN,value => !validateString(value) || validateRequiredField(value), error[2]);
 	validateField(fEmail.value, fEmail, errorEmail, value => !validateEmail(value) || validateRequiredField(value), error[3])
-	validateField(fPassword.value, fPassword, errorPassword, value => !validatePasswordLettersNumbers(value) || validateRequiredField(value) || !validateNumCharactersPW, error[4]);
+	validateField(fPassword.value, fPassword, errorPassword, value => !validatePasswordLettersNumbers(value) || validateRequiredField(value) || !validateNumCharactersPW(value), error[4]);
 	validateField(fPhone.value, fPhone, errorPhone, value => !validateNumber(value) || validateRequiredField(value) || !validateNumCharactersPhone(value), error[5]);
 	validateField(fAddress.value, fAddress, errorAddress, value => validateRequiredField(value), error[6]);
 
-	
-
-
-
-	
-
-
-
-
+	console.log("Errores:", errorCount);
 
 	if (errorCount === 0) {
+
+		document.getElementById("alertBox").style.display = "none";
 		document.getElementById("successMessage").style.display = "block";
 		document.getElementById("successMessage").innerHTML = error[8];
-		document.getElementById("alertBox").style.display = "none";
 	} else {
+		document.getElementById("successMessage").style.display = "none";
 		document.getElementById("alertBox").style.display = "block";
 		document.getElementById("alertBox").innerHTML = error[7];
-		document.getElementById("successMessage").style.display = "none";
 	}
 
 }
